@@ -16,15 +16,24 @@ public partial class _Default : System.Web.UI.Page
         string first = TextBox1.Text;
         string second = TextBox2.Text;
         //Response.Write("<script>confirm('Hello "+first+" "+second+" ');</script>");
-       // TextBox1.Text = null;
-      //  TextBox2.Text = null;
-       // Response.Redirect("~/Default2.aspx");
-        ClientScriptManager CSM = Page.ClientScript;
-        if (!ReturnValue())
+        if (first == "admin" && second == "admin")
         {
-            string strconfirm = "<script>if(window.confirm('Are you sure?')){window.location.href='Default2.aspx'}</script>";
-            CSM.RegisterClientScriptBlock(this.GetType(), "Confirm", strconfirm, false);
+
+            // Response.Redirect("~/Default2.aspx");
+            ClientScriptManager CSM = Page.ClientScript;
+            if (!ReturnValue())
+            {
+                string strconfirm = "<script>if(window.confirm('Hello " + first + " " + second + ". want to proceed ')){window.location.href='Default2.aspx'}</script>";
+                CSM.RegisterClientScriptBlock(this.GetType(), "Confirm", strconfirm, false);
+            }
+           
         }
+        else
+        {
+            Response.Write("<script>alert('Hello "+first+" "+second+". Your details not matched ');</script>");
+        }
+        TextBox1.Text = null;
+        TextBox2.Text = null;
     }
     bool ReturnValue()
     {
