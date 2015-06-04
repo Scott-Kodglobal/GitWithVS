@@ -9,7 +9,8 @@
 <body>
     <form id="form1" runat="server">
     <div>
-    Welcome to page 2
+    Welcome to page 2.
+    <br /> the details about dot net remoting is need to be learn.
     </div>
     </form>
 </body>
