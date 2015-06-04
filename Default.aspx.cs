@@ -15,9 +15,19 @@ public partial class _Default : System.Web.UI.Page
     {
         string first = TextBox1.Text;
         string second = TextBox2.Text;
-        Response.Write("<script>confirm('Hello "+first+" "+second+" ');</script>");
-        TextBox1.Text = null;
-        TextBox2.Text = null;
-        //Response.Redirect();
+        //Response.Write("<script>confirm('Hello "+first+" "+second+" ');</script>");
+       // TextBox1.Text = null;
+      //  TextBox2.Text = null;
+       // Response.Redirect("~/Default2.aspx");
+        ClientScriptManager CSM = Page.ClientScript;
+        if (!ReturnValue())
+        {
+            string strconfirm = "<script>if(window.confirm('Are you sure?')){window.location.href='Default2.aspx'}</script>";
+            CSM.RegisterClientScriptBlock(this.GetType(), "Confirm", strconfirm, false);
+        }
+    }
+    bool ReturnValue()
+    {
+        return false;
     }
 }
