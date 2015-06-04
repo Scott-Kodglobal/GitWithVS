@@ -10,6 +10,9 @@
     <form id="form1" runat="server">
     <div>
     The Main Page with the welcome note.<br /> very first step to github.
+      Enter your name :   <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox><br />
+       Enter your Contact No :   <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox><br />
+        <asp:Button ID="Button1" runat="server" Text="Button" onclick="Button1_Click" />
     </div>
     </form>
 </body>
