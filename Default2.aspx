@@ -11,6 +11,8 @@
     <div>
     Welcome to page 2.
     <br /> the details about dot net remoting is need to be learn.
+        <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox><br />
+        <asp:Button ID="Button1" runat="server" Text="Button" onclick="Button1_Click" />
     </div>
     </form>
 </body>
